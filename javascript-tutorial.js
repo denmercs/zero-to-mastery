@@ -51,4 +51,7 @@ if (name === "Dennis") {
 // >
 // <
 
-// Javascript
+// Javascript DOM
+document.write("hello"); //--> document is a screen in the browser
+window; // -- parent of document
+window.alert("check check");
