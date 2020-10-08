@@ -55,3 +55,14 @@ if (name === "Dennis") {
 document.write("hello"); //--> document is a screen in the browser
 window; // -- parent of document
 window.alert("check check");
+
+// DOM Selectors
+
+// getElementsByTagName
+document.getElementsByTagName("second");
+// getElementsByClassName
+document.getElementsByTagName("first");
+// getElementById
+document.getElementById("tags");
+// querySelector
+document.querySelector("h1");
