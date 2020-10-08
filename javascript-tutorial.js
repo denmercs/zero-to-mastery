@@ -88,3 +88,42 @@ document.querySelectorAll("li")[1].parentElement;
 document.querySelectorAll("li")[1].parentElement.children;
 // getElementsByTagName
 document.getElementsByTagName("button");
+
+// Events
+let button = document.getElementsByTagName("button")[0];
+// keyboard events and mouse events
+button.addEventListener("click", () => {
+  console.log("CLICKED!");
+});
+
+// append and createElement
+let button = document.getElementsById("enter");
+let input = document.getElementById("userinput");
+let ul = document.querySelector("ul");
+
+function inputLength() {
+  return input.value.length;
+}
+
+function createListElement() {
+  let li = document.createElement("li");
+  li.appendChild(document.createTextNode(input.value));
+  ul.appendChild(li);
+  input.value = "";
+}
+
+function addListAfterClick() {
+  if (inputLength() > 0) {
+    createListElement();
+  }
+}
+
+function addListAfterKeypress(event) {
+  if (inputLength() > 0 && event.keyCode === 13) {
+    createListElement();
+  }
+}
+
+button.addEventListener("click", addListAfterClick());
+
+input.addEventListener("keypress", addListAfterKeypress());
