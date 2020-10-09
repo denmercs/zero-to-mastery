@@ -184,3 +184,78 @@ sym2 === sym3; // result --> false
 
 // Arrow functions
 const add = (a, b) => a + b;
+
+// Advance function
+const first = () => {
+  const greet = "Hi";
+  const second = () => {
+    alert(greet);
+  };
+  return second;
+};
+
+const newFunc = first();
+newFunc();
+
+// Closures
+// - a function ran, the function executed. it's never going to execute again but it's going to remember there are references to the variables
+// so the child scope always has access of the parents scope.
+
+const first = () => {
+  const greet = "Hi";
+  const second = () => {
+    alert(greet);
+  };
+
+  return second;
+};
+
+const newFunc = first();
+
+newFunc();
+
+// currying
+const multiply = (a, b) => a + b;
+const curriedMultiply = (a) => (b) => a * b;
+curriedMultiply(3)(2); //-->  results will be 6
+const multiplyBy5 = curriedMultiply(5);
+multiplyBy5(10); //--> results will be 50
+
+// compose
+const compose = (f, g) => (a) => f(g(a));
+const sum = (num) => num + 1;
+compose(sum, sum)(5); // result will be 7
+
+// avoid sideeffect, functional purity means we always return something
+let a = 1;
+function b() {
+  a = 2;
+}
+
+// Advance arrays
+let array = [1, 2, 3, 4, 5];
+const double = [];
+const newArray = array.forEach((num) => {
+  double.push(num * 2);
+});
+
+console.log(double);
+
+// map, filter, reduce
+const mapArray = array.map((num) => num * 2);
+
+console.log(mapArray);
+
+// map creates a new array and return it
+
+// filter
+const filterArrary = array.filter((num) => {
+  return num > 5;
+});
+
+// reduce
+const reduceArray = array.reduce((accumulator, num) => {
+  return accumulator + num;
+}, 0);
+
+console.log(reduceArray);
