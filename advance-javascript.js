@@ -259,3 +259,84 @@ const reduceArray = array.reduce((accumulator, num) => {
 }, 0);
 
 console.log(reduceArray);
+
+// Advance Objects
+
+// reference type
+let object1 = { value: 10 };
+let object2 = object1;
+let object3 = { value: 10 };
+
+object1 == object2; // true
+object1 === object3; // false
+object2.value = 15;
+object2.value; // 15
+object3.value; // 10
+
+// context
+function scope() {
+  let a = 4;
+}
+
+function context() {
+  console.log(this);
+}
+
+const object4 = {
+  a: function () {
+    console.log(this);
+  },
+};
+
+// instantiation
+class Player {
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+  }
+  introduce() {
+    console.log(`Hi I am ${this.name}, I'm a ${this.type}`);
+  }
+}
+
+class Wizard extends Player {
+  constructor(name, type) {
+    super(name, type);
+  }
+  play() {
+    console.log(`WEEEE I'm a ${this.type}`);
+  }
+}
+
+const wizard1 = new Wizard("Shelly", "Healer");
+const wizard1 = new Wizard("Sean", "Dark Magic");
+
+// pass by reference or by value
+let a = 5;
+let b = a; // pass by reference
+
+b++; // -> 6
+
+let obj1 = { name: "Yao", password: "123" };
+let obj2 = obj1;
+
+obj2.password = "easypeasy";
+
+console.log(obj1);
+
+let obj = { a: "a", b: "b", c: "c" };
+let clone = Object.assign({}, obj);
+let clone2 = { ...obj };
+let superClone = JSON.parse(JSON.stringify(obj));
+
+obj.c = 5;
+console.log(clone);
+console.log(superClone);
+
+// ES7
+// includes
+
+"hello".includes("o"); // true
+
+// **
+const square = (x) => x ** 2;
