@@ -340,3 +340,104 @@ console.log(superClone);
 
 // **
 const square = (x) => x ** 2;
+
+// es8
+// padStart()
+// padEnd()
+
+'Turtle'.padStart(10); //--> results  "         Turtle"
+'Turtle'.padEnd(10); //--> results "Trutle         "
+
+
+// changes
+const fun = (a,b,c,d,) => {
+  console.log(a)
+}
+
+fun(1,2,3,4)
+
+// objects
+
+let obj = {
+  username0: "Santa",
+  username1: "Rudolf",
+  username2: "Mr. Grinch"
+}
+
+Object.keys(obj).forEach((key, index) => {
+  console.log(key, obj[key])
+})
+
+Object.values(obj).forEach(value => {
+  console.log(value)
+})
+
+Object.entries(obj).forEach(value => {
+  console.log(value)
+})
+
+Object.entries(obj).map(value => {
+  return value[1] + value[0].replace("username", "")
+})
+
+// Async Await
+// .flat()
+
+const array = [1,[2,3],[4,[5]]];
+array.flat() // results --> [1,2,3,4,5]
+
+array.flat(2) // results --> [1,2,3,4,5]
+
+const entries = ["bob", "sally",,,,,"cindy"];
+entries.flat();
+
+// flatMap()
+const jurassicPark = [["trex"], 1,2,3,[4,5]];
+const jurassicParkChaos = jurassicPark.flatMap(creature => creature + "trex");
+
+// trim start and trim end
+let userEmail = "          eddytheeagle@gmail.com";
+let userEmail2 = "jonnydangerous@gmail.com";
+console.log(userEmail.trimStart());
+console.log(userEmail2.trimeEnd());
+
+userProfiles = [["commanderTom", 23], ["derekZlander", 40], ["hansel", 13]];
+
+const obj = Object.fromEntries(userProfiles);
+Object.entries(obj)
+
+// try and catch block
+
+try {
+  4 + 5
+} catch {
+  console.log("you messed up!")
+}
+
+// advance looping
+const basket = ["apples", "oranges", "grapes"];
+
+for(let i = 0; i < basket.length; i++) {
+  console.log(basket[i])
+}
+
+basket.forEach(item => console.log(item));
+
+// for of
+// Iterating -> works in array and strings
+for(item of basket) {
+  console.log(item);
+}
+
+// for in
+// works in object
+// Enumerating
+const detailedBasket = {
+  apples: 5,
+  oranges: 10,
+  grapes: 1000
+}
+
+for(item in detailedBasket) {
+  console.log(item);
+}
