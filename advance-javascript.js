@@ -345,55 +345,54 @@ const square = (x) => x ** 2;
 // padStart()
 // padEnd()
 
-'Turtle'.padStart(10); //--> results  "         Turtle"
-'Turtle'.padEnd(10); //--> results "Trutle         "
-
+"Turtle".padStart(10); //--> results  "         Turtle"
+"Turtle".padEnd(10); //--> results "Trutle         "
 
 // changes
-const fun = (a,b,c,d,) => {
-  console.log(a)
-}
+const fun = (a, b, c, d) => {
+  console.log(a);
+};
 
-fun(1,2,3,4)
+fun(1, 2, 3, 4);
 
 // objects
 
 let obj = {
   username0: "Santa",
   username1: "Rudolf",
-  username2: "Mr. Grinch"
-}
+  username2: "Mr. Grinch",
+};
 
 Object.keys(obj).forEach((key, index) => {
-  console.log(key, obj[key])
-})
+  console.log(key, obj[key]);
+});
 
-Object.values(obj).forEach(value => {
-  console.log(value)
-})
+Object.values(obj).forEach((value) => {
+  console.log(value);
+});
 
-Object.entries(obj).forEach(value => {
-  console.log(value)
-})
+Object.entries(obj).forEach((value) => {
+  console.log(value);
+});
 
-Object.entries(obj).map(value => {
-  return value[1] + value[0].replace("username", "")
-})
+Object.entries(obj).map((value) => {
+  return value[1] + value[0].replace("username", "");
+});
 
 // Async Await
 // .flat()
 
-const array = [1,[2,3],[4,[5]]];
-array.flat() // results --> [1,2,3,4,5]
+const array = [1, [2, 3], [4, [5]]];
+array.flat(); // results --> [1,2,3,4,5]
 
-array.flat(2) // results --> [1,2,3,4,5]
+array.flat(2); // results --> [1,2,3,4,5]
 
-const entries = ["bob", "sally",,,,,"cindy"];
+const entries = ["bob", "sally", , , , , "cindy"];
 entries.flat();
 
 // flatMap()
-const jurassicPark = [["trex"], 1,2,3,[4,5]];
-const jurassicParkChaos = jurassicPark.flatMap(creature => creature + "trex");
+const jurassicPark = [["trex"], 1, 2, 3, [4, 5]];
+const jurassicParkChaos = jurassicPark.flatMap((creature) => creature + "trex");
 
 // trim start and trim end
 let userEmail = "          eddytheeagle@gmail.com";
@@ -401,31 +400,35 @@ let userEmail2 = "jonnydangerous@gmail.com";
 console.log(userEmail.trimStart());
 console.log(userEmail2.trimeEnd());
 
-userProfiles = [["commanderTom", 23], ["derekZlander", 40], ["hansel", 13]];
+userProfiles = [
+  ["commanderTom", 23],
+  ["derekZlander", 40],
+  ["hansel", 13],
+];
 
 const obj = Object.fromEntries(userProfiles);
-Object.entries(obj)
+Object.entries(obj);
 
 // try and catch block
 
 try {
-  4 + 5
+  4 + 5;
 } catch {
-  console.log("you messed up!")
+  console.log("you messed up!");
 }
 
 // advance looping
 const basket = ["apples", "oranges", "grapes"];
 
-for(let i = 0; i < basket.length; i++) {
-  console.log(basket[i])
+for (let i = 0; i < basket.length; i++) {
+  console.log(basket[i]);
 }
 
-basket.forEach(item => console.log(item));
+basket.forEach((item) => console.log(item));
 
 // for of
 // Iterating -> works in array and strings
-for(item of basket) {
+for (item of basket) {
   console.log(item);
 }
 
@@ -435,9 +438,70 @@ for(item of basket) {
 const detailedBasket = {
   apples: 5,
   oranges: 10,
-  grapes: 1000
-}
+  grapes: 1000,
+};
 
-for(item in detailedBasket) {
+for (item in detailedBasket) {
   console.log(item);
 }
+
+// memory heap
+const a = 1;
+const b = 5;
+const c = 10;
+
+// call stack
+console.log(a);
+console.log(b);
+console.log(c);
+
+const one = () => {
+  const two = () => {
+    console.log("4");
+  };
+  two();
+};
+
+// CALL STACK
+// recursion
+// this will result into stack overflow
+function foo() {
+  foo();
+}
+
+foo();
+
+// Asynchronous programming
+// - this will solve the Javascript as non blocking
+
+console.log("1");
+setTimeout(() => {
+  console.log("2");
+}, 2000);
+console.log("3");
+
+// CALL STACK
+
+// web api
+
+// callback queue
+
+// event loop
+
+// ES6 Webpack2
+
+//js1
+export const add = (a, b) => a + b;
+// or
+export default function add() {
+  return a + b;
+}
+
+// js2
+import { add } from "./add";
+//or
+import add from "./add";
+
+const object = {
+  name: "sally",
+};
